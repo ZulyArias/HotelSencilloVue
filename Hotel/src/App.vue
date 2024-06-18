@@ -22,7 +22,7 @@ Agrega imágenes o videos que muestren las actividades en acción para atraer a 
 Página de Servicios:
 En esta sección ponemos todos los servicios que nos ofrece el hotel  -->
 
-<template>
+<!-- <template>
   <div>
     <div>
       <h1>Hotel</h1>
@@ -54,7 +54,6 @@ En esta sección ponemos todos los servicios que nos ofrece el hotel  -->
         <p>Descripción de la habitación familiar</p>
         <p>Precio: $150 por noche</p>
         <button>Reservar Ahora</button>
-
       </div>
 
     </div>
@@ -63,7 +62,7 @@ En esta sección ponemos todos los servicios que nos ofrece el hotel  -->
       <h2>Contacto</h2>
       <p>Dirección: Calle Principal #123</p>
       <p>Teléfono: 123-456-7890</p>
-      <p>Correo Electrónico: 
+      <p>Correo Electrónico:
         <a href="mailto:" target="_blank"></a>
       </p>
     </div>
@@ -109,6 +108,53 @@ En esta sección ponemos todos los servicios que nos ofrece el hotel  -->
       </ul>
     </div>
   </div>
+</template> -->
+
+<template>
+  <!-- Página de Bienvenida:
+
+Diseña una página de inicio acogedora que muestre imágenes atractivas del hotel y una breve introducción.
+Incluye información sobre servicios destacados, como piscinas, restaurantes, spas, etc.
+Agrega un llamado a la acción (CTA) para que los visitantes puedan explorar más sobre el hotel o realizar una reserva directamente desde esta página.
+Página de Habitaciones: -->
+  <div>
+    <q-layout view="hHh lpR fFf">
+      <q-header elevated class="bg-dark text-white" height-hint="98">
+        <q-toolbar>
+          <q-toolbar-title>
+            <q-avatar rounded size="100px">
+              <!-- necesito que la imagen lleve al router view del q-page-container -->
+              <img
+                src="https://img.freepik.com/vector-premium/plantilla-diseno-vector-logotipo-icono-hotel_827767-3569.jpg"
+                alt="Hotel Logo"
+                style="cursor: pointer;"
+                to="/"
+                />
+            </q-avatar>
+          </q-toolbar-title>
+        </q-toolbar>
+
+        <q-tabs align="center">
+          <q-route-tab to="/Habitaciones" label="Habitaciones" />
+          <q-route-tab to="/Contacto" label="Contacto" />
+          <q-route-tab to="/Deportes" label="Deportes" />
+          <q-route-tab to="/Servicios" label="Servicios" />
+        </q-tabs>
+      </q-header>
+
+      <q-page-container>
+        <router-view />
+        <div>
+          <h1>Hotel</h1>
+          <p>Bienvenido al Hotel</p>
+          <p>Disfruta de nuestras instalaciones y servicios de lujo</p>
+          <button>Reservar Ahora</button>
+        </div>
+      </q-page-container>
+    </q-layout>
+  </div>
+
+
 </template>
 
 
@@ -116,53 +162,9 @@ En esta sección ponemos todos los servicios que nos ofrece el hotel  -->
 <script setup>
 import { ref } from 'vue'
 
-const message = ref('Hello, Vue 3!')
-
-setTimeout(() => {
-  message.value = 'Hello, Vue 3!!!'
-}, 2000)
-
 
 </script>
 
 
 
-<style scoped>
-h1 {
-  color: #333;
-  font-size: 2rem;
-}
-
-p {
-  color: #666;
-  font-size: 1rem;
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-div {
-  margin: 1rem 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin: 0.5rem 0;
-}
-
-</style>
+<style scoped></style>
