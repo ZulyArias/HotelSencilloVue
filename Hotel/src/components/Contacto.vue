@@ -1,74 +1,92 @@
 <template>
-    <div>
+    <div class="contact">
         <h1>Contacto</h1>
-        <p>¡Hola! Soy un componente de Vue 3.</p>
-        <div>
-            <img src="" alt="Vue logo" />
+        <div class="contact-info">
+            <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+            <p>Teléfono: +123 456 7890</p>
+            <p>Email: info@paradisohotel.com</p>
+            <p>Horario de Atención: 24/7</p>
         </div>
-        <div>
-            <button @click="message = '¡Hola, Vue 3!!!'">Saludar</button>
-        </div>
-        <div>
-            <p>{{ message }}</p>
-        </div>
-        <div>
-            <ul>
-                <li>Vue 3</li>
-                <li>Vue Router 4</li>
-                <li>Quasar 2</li>
-            </ul>
+        <form class="contact-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="map">
+            <!-- Aquí puedes insertar un mapa interactivo -->
+            <p>Mapa interactivo: Agrega la imagen aquí</p>
         </div>
     </div>
 </template>
 
-<script setup>
-    import { ref } from 'vue'
-
-    const message = ref('Hello, Vue 3!')
-
-    setTimeout(() => {
-        message.value = 'Hello, Vue 3!!!'
-    }, 2000)
-
-
+<script>
+export default {
+    name: 'Contacto',
+};
 </script>
 
 <style scoped>
-    h1 {
-        color: #333;
-        font-size: 2rem;
-    }
+.contact {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+}
 
-    p {
-        color: #666;
-        font-size: 1rem;
-    }
+.contact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
 
-    button {
-        background-color: #007bff;
-        color: #fff;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 0.25rem;
-        cursor: pointer;
-    }
+.contact-info {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
 
-    img {
-        width: 100%;
-        height: auto;
-    }
+.contact-form {
+    margin-bottom: 2rem;
+}
 
-    div {
-        margin: 1rem 0;
-    }
+.contact-form label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-    li {
-        margin: 0.5rem 0;
-    }
+.contact-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.map {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+}
 </style>

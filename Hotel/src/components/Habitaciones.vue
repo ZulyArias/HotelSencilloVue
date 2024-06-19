@@ -1,72 +1,88 @@
 <template>
-    <div>
-        <h1>Habitaciones</h1>
-        <div>
-        <img src="" alt="Vue logo" />
-        </div>
-        <div>
-        <button @click="message = '¡Hola, Vue 3!!!'">Saludar</button>
-        </div>
-        <div>
-        <p>{{ message }}</p>
-        </div>
-        <div>
-        <ul>
-            <li>Vue 3</li>
-            <li>Vue Router 4</li>
-            <li>Quasar 2</li>
-        </ul>
+    <div class="rooms">
+        <h1>Nuestras Habitaciones</h1>
+        <div class="room-gallery">
+            <div class="room-card" v-for="room in rooms" :key="room.id">
+                <img :src="room.image" :alt="room.type">
+                <h2>{{ room.type }}</h2>
+                <p>{{ room.description }}</p>
+                <p><strong>Precio: {{ room.price }}</strong></p>
+                <router-link to="/contacto" class="book-button">Reservar</router-link>
+            </div>
         </div>
     </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-
-const message = ref('Hello, Vue 3!')
-
-setTimeout(() => {
-    message.value = 'Hello, Vue 3!!!'
-}, 2000)
-
+<script>
+export default {
+    name: 'Habitaciones',
+    data() {
+        return {
+            rooms: [
+                { id: 1, type: 'Habitación Estándar', description: 'Una habitación cómoda para dos personas.', price: '$100 por noche', image: '/images/habitaciones/estandar.jpg' },
+                { id: 2, type: 'Suite', description: 'Una lujosa suite con vista al mar.', price: '$200 por noche', image: '/images/habitaciones/suite.jpg' },
+                // Agrega más habitaciones según sea necesario
+            ]
+        };
+    }
+};
 </script>
 
 <style scoped>
-    h1 {
-        color: #333;
-        font-size: 2rem;
-    }
+.rooms {
+    padding: 2rem;
+    background-color: #f8f9fa;
+}
 
-    p {
-        color: #666;
-        font-size: 1rem;
-    }
+.rooms h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
 
-    button {
-        background-color: #007bff;
-        color: #fff;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 0.25rem;
-        cursor: pointer;
-    }
+.room-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
 
-    img {
-        width: 100%;
-        height: auto;
-    }
+.room-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
-    div {
-        margin: 1rem 0;
-    }
+.room-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
+.room-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
 
-    li {
-        margin: 0.5rem 0;
-    }
+.room-card p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
 
+.book-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.book-button:hover {
+    background-color: #218838;
+}
 </style>
