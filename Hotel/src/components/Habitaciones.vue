@@ -13,19 +13,15 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'Habitaciones',
-    data() {
-        return {
-            rooms: [
-                { id: 1, type: 'Habitación Estándar', description: 'Una habitación cómoda para dos personas.', price: '$100 por noche', image: '/images/habitaciones/estandar.jpg' },
-                { id: 2, type: 'Suite', description: 'Una lujosa suite con vista al mar.', price: '$200 por noche', image: '/images/habitaciones/suite.jpg' },
-                // Agrega más habitaciones según sea necesario
-            ]
-        };
-    }
-};
+<script setup>
+import { ref } from 'vue';
+
+const rooms = ref([
+    { id: 1, type: 'Habitación Estándar', description: 'Una habitación cómoda para dos personas.', price: '$100 por noche', image: '/images/habitaciones/estandar.jpg' },
+    { id: 2, type: 'Suite', description: 'Una lujosa suite con vista al mar.', price: '$200 por noche', image: '/images/habitaciones/suite.jpg' },
+    // Agrega más habitaciones según sea necesario
+]);
+
 </script>
 
 <style scoped>
@@ -76,13 +72,15 @@ export default {
 .book-button {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #28a745;
+    background-color: black;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .book-button:hover {
-    background-color: #218838;
+    background-color: #717b86;
+    border: 1px solid black;
+    box-shadow: #717b86 0px 0px 10px 0px;
 }
 </style>

@@ -12,10 +12,9 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'Servicios',
-};
+<script setup>
+import { ref } from 'vue'
+
 </script>
 
 <style scoped>

@@ -2,8 +2,8 @@
   <div>
     <q-layout view="hHh lpR fFf">
       <q-header elevated class="bg-dark text-white" height-hint="98">
-        <q-toolbar>
-          <q-toolbar-title>
+        <q-toolbar style="display: flex; justify-content: center; align-items: center;">
+          <q-toolbar-title style="display: flex; justify-content: center; width: 100%;">
             <q-avatar rounded size="100px">
               <router-link to="/">
                 <img
@@ -51,4 +51,19 @@ import { ref } from 'vue'
 
 
 
-<style scoped></style>
+<style scoped>
+*{
+  font-family: 'Roboto Slab', serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.footer-content p {
+  margin: 0;
+}
+</style>

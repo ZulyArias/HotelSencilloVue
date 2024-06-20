@@ -97,14 +97,17 @@ import { ref } from 'vue'
 .cta-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: #007bff;
+    background-color: black;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 1rem;
+    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background-color: #717b86;
+    border: 1px solid black;
+    box-shadow: #717b86 0px 0px 10px 0px;
 }
 </style>
