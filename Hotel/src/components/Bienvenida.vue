@@ -9,21 +9,20 @@
         <section class="highlight-services">
             <h2>Servicios Destacados</h2>
             <ul>
-                <li class="home-gallery-services"><h3>Piscinas</h3><img src="/images/piscina1.jpg" alt="Imagen de bienvenida 1"></li>
+                <li class="home-gallery-services"><h3 class="TextoImgs">Piscinas</h3><img src="/images/piscina1.jpg" alt="Imagen de bienvenida 1"></li>
                 <br><br>
-                <li><h3>Restaurantes</h3></li>
-                <li><h3>Spas</h3></li>
-                <li><h3>Gimnasio</h3></li>
+                <li class="home-gallery-services"><h3 class="TextoImgs">Restaurantes</h3></li>
+                <li class="home-gallery-services"><h3 class="TextoImgs">Spas</h3></li>
+                <li class="home-gallery-services"><h3 class="TextoImgs">Gimnasio</h3></li>
             </ul>
             <router-link to="/servicios" class="cta-button">Explorar Servicios</router-link>
         </section>
     </div>
 </template>
 
-<script>
-export default {
-    name: 'Bienvenida',
-};
+<script setup>
+import { ref } from 'vue'
+
 </script>
 
 <style scoped>
@@ -56,6 +55,16 @@ export default {
     gap: 1rem;
     justify-content: center;
     margin-bottom: 2rem;
+    position: relative;
+}
+
+.TextoImgs {
+    position: absolute;
+    top: 0;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .home-gallery-services img {
