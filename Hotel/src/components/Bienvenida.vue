@@ -56,25 +56,36 @@ import { ref } from 'vue'
     justify-content: center;
     margin-bottom: 2rem;
     position: relative;
+    overflow: hidden;
 }
 
 .TextoImgs {
     position: absolute;
-    top: 0;
+    bottom: -100%; 
+    left: 0;
+    width: 100%;
     color: white;
     font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    transition: bottom 0.5s, opacity 0.5s; 
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 0.5rem 0; 
+}
+
+.home-gallery-services:hover .TextoImgs {
+    bottom: 0;
+    opacity: 1;
 }
 
 .home-gallery-services img {
-    max-width: 60%;
+    max-width: 90%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .highlight-services {
-    text-align: left;
+    text-align: center;
     margin: 2rem auto;
     max-width: 800px;
 }
@@ -91,7 +102,17 @@ import { ref } from 'vue'
 
 .highlight-services li {
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    transition: 0.5s;
+}
+
+.highlight-services li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    transition: 0.5s;
 }
 
 .cta-button {
