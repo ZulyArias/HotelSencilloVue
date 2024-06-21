@@ -3,16 +3,12 @@
         <h1>Deportes Extremos</h1>
         <div class="sports-list">
             <div class="sport-card" v-for="sport in sports" :key="sport.id">
-                <div class="sport-image">
-                    <img :src="sport.image" :alt="sport.name">
-                    <div class="sport-details">
-                        <h2>{{ sport.name }}</h2>
-                        <p>{{ sport.description }}</p>
-                        <p><strong>Nivel de dificultad: {{ sport.difficulty }}</strong></p>
-                        <p><strong>Precio: {{ sport.price }}</strong></p>
-                        <router-link to="/contacto" class="book-button">Reservar</router-link>
-                    </div>
-                </div>
+                <img :src="sport.image" :alt="sport.name">
+                <h2>{{ sport.name }}</h2>
+                <p>{{ sport.description }}</p>
+                <p><strong>Nivel de dificultad: {{ sport.difficulty }}</strong></p>
+                <p><strong>Precio: {{ sport.price }}</strong></p>
+                <router-link to="/contacto" class="book-button">Reservar</router-link>
             </div>
         </div>
     </div>
@@ -54,7 +50,7 @@ const sports = ref([
 
 .sport-card {
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
     padding: 1rem;
     background-color: white;
     border-radius: 10px;
@@ -66,19 +62,40 @@ const sports = ref([
     transform: translateY(-10px);
 }
 
-.sport-image {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.sport-image img {
+.sport-card img {
     width: 100%;
+    border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
-.sport-image:hover img {
+.sport-card:hover img {
     transform: scale(1.1);
+}
+
+.sport-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.sport-card p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-button {
+    padding: 0.75rem 1.5rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-button:hover {
+    background-color: #717b86;
+    border: 1px solid black;
+    box-shadow: #717b86 0px 0px 10px 0px;
+    ;
 }
 
 .sport-details {
@@ -92,32 +109,16 @@ const sports = ref([
     transition: transform 0.3s ease-in-out;
 }
 
-.sport-image:hover .sport-details {
+.sport-card:hover .sport-details {
     transform: translateY(0);
 }
 
-.sport-details h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
 .sport-details p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
 
-.book-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    transition: background-color 0.3s;
-}
-
-.book-button:hover {
-    background-color: #717b86;
+.sport-details strong {
+    font-weight: bold;
 }
 </style>
