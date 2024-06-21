@@ -10,7 +10,6 @@
             <h2>Servicios Destacados</h2>
             <ul>
                 <li class="home-gallery-services"><h3 class="TextoImgs">Piscinas</h3><img src="/images/piscina1.jpg" alt="Imagen de bienvenida 1"></li>
-                <br><br>
                 <li class="home-gallery-services"><h3 class="TextoImgs">Restaurantes</h3><img src="/images/restaurante.jpg" alt=""></li>
                 <li class="home-gallery-services"><h3 class="TextoImgs">Spas</h3><img src="/images/spa.jpg" alt=""></li>
                 <li class="home-gallery-services"><h3 class="TextoImgs">Gimnasio</h3><img src="/images/gym.jpg" alt=""></li>
@@ -68,13 +67,14 @@ import { ref } from 'vue'
 }
 
 .home-gallery-services img {
-    max-width: 60%;
+    max-width: 90%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .highlight-services {
-    text-align: left;
+    text-align: center;
+    
     margin: 2rem auto;
     max-width: 800px;
 }
@@ -86,28 +86,27 @@ import { ref } from 'vue'
 
 .highlight-services ul {
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     padding: 0;
 }
 
 .highlight-services li {
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
 }
 
 .cta-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: black;
+    background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 1rem;
-    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #717b86;
-    border: 1px solid black;
-    box-shadow: #717b86 0px 0px 10px 0px;
+    background-color: #0056b3;
 }
 </style>

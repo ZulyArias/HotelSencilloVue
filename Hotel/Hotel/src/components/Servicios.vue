@@ -22,9 +22,10 @@
     </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-
+<script>
+export default {
+    name: 'Servicios',
+};
 </script>
 
 <style scoped>
@@ -63,5 +64,6 @@ import { ref } from 'vue'
 .services li::before {
     content: "✔️";
     margin-right: 0.5rem;
+    color: #28a745;
 }
 </style>
